@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load static %}
+{%block title%}
+    Корзина
+{%endblock%}
+{%block content%}
+<h1>Список заказов</h1>
+    <table class="mytable">
+        <thead class="table-dark">
+            <tr>
+                <th>Клиент</th>
+                <th>Название</th>
+                <th>Кол-во</th>
+                <th>Дата</th>
+                <th>Сумма</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tbody>
+                {% for cart in cart_list %}
+                <tr>
+                    <td>{{cart.client_name}}</td>
+                    <td>{{cart.product}}</td>
+                    <td>{{cart.count}}</td>
+                    <td>{{cart.date}}</td>
+                    <td>{{cart.sum_price}} руб.</td>
+                </tr>
+                {%endfor%}
+        </tbody>
+    </table>
+<a href="{% url 'products_list' %}" >Вернуться ко всем товарам</a>
+{%endblock%}

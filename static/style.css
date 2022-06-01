@@ -1,0 +1,64 @@
+.mytable {
+	width: 50%;
+	margin-bottom: 20px;
+	border: 1px solid #dddddd;
+	border-collapse: collapse;
+	text-align: center;
+}
+.mytable th {
+	font-weight: bold;
+	padding: 5px;
+	background: #000000;
+	border: 1px solid #dddddd;
+	color: white;
+}
+.mytable td {
+	border: 1px solid #dddddd;
+	padding: 5px;
+}
+.mytable tbody tr {
+    background: #FFFFFF;
+}
+
+#bg{
+    background-size: 500px 250px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-attachment: fixed;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    display: inline-block;
+    position: relative;
+    padding-left: 6px;
+    /* Font styles */
+    text-decoration: none;
+    color: #000000;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.9);
+}
+
+a:hover {
+    color: #3C9CE7;
+}
+
+a:before {
+    content: "\25BA";
+    font-size: 80%;
+    display: inline-block;
+    padding-right: 3px;
+    pointer-events: none;
+}
+
+a:hover:before {
+    color: #F2BF97;
+}
+
+.inp {
+    display: flex;
+    flex-direction: column;
+}
