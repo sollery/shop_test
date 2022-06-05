@@ -5,29 +5,45 @@
     Все товары
 {%endblock%}
 {%block content%}
-<h1>Все товары</h1><img src="{% static 'tovari.jpg' %}" height="s" width="300">
-    <table class="mytable">
-        <thead class="table-dark">
+<h1>Все товары</h1><img src="{% static 'pg_2.png' %}" height="300" width="600">
+    <form action="" method="post">
+        <div class="info">
+            <label>Введите ваше имя:<input type="text" name="name" placeholder="Введите свое имя"></label>
+            <label>Введите ваше email:<input type="text" name="email" placeholder="Введите свою почту"></label>
+        </div>
+        <div>
+         <table class="mytable">
+            {% csrf_token %}
+        <thead>
             <tr>
                 <th>Название</th>
+                <th>Присутствие</th>
                 <th>Кол-во</th>
-                <th>Цена</th>
+<!--                <th>Цена</th>-->
+<!--                <th>Кол-во товара</th>-->
             </tr>
         </thead>
         <tbody>
         <tbody>
-                {% for product in product_list %}
+                {% for product in products %}
                 <tr>
                     <td><a href="{% url 'products_detail' product.id %}">{{product.title}}</a></td>
                     {% if product.count > 0 %}
                         <td>Есть в наличии</td>
+                        <td><label>Введите кол-во:<input class = inp_c type="number" min=0 name="{{product.id}}" value ='0'></label></td>
                     {% else %}
                         <td>Закончились</td>
+                        <td><label>Введите кол-во:<input class = inp_c type="number" name="{{product.id}}" value ='0' readonly></label></td>
                     {% endif %}
-                    <td>{{product.price}} руб.</td>
+<!--                    <td>{{product.price}} руб.</td>-->
+<!--                    <td>{{product.count}}</td>-->
                 </tr>
                 {%endfor%}
         </tbody>
-    </table>
-<a href="{% url 'Carts' %}" >Перейти к заказам</a>
+        </table>
+         </div>
+        <input type="submit" value="Заказать"/>
+    </form>
+    <h1>{{info}}</h1>
+<a href="{% url 'Orders' %}" >Перейти к заказам</a>
 {%endblock%}

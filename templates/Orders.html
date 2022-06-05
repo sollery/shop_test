@@ -9,22 +9,22 @@
     <table class="mytable">
         <thead class="table-dark">
             <tr>
+                <th>Номер заказа</th>
                 <th>Клиент</th>
-                <th>Название</th>
-                <th>Кол-во</th>
+                <th>Почта</th>
                 <th>Дата</th>
-                <th>Сумма</th>
+                <th>Сумма к оплате</th>
             </tr>
         </thead>
         <tbody>
         <tbody>
-                {% for cart in cart_list %}
+                {% for order in order_list %}
                 <tr>
-                    <td>{{cart.client_name}}</td>
-                    <td>{{cart.product}}</td>
-                    <td>{{cart.count}}</td>
-                    <td>{{cart.date}}</td>
-                    <td>{{cart.sum_price}} руб.</td>
+                    <td><a href="{% url 'order_detail' order.id%}">{{order.id}}</a></td>
+                    <td>{{order.client_name}}</td>
+                    <td>{{order.client_mail}}</td>
+                    <td>{{order.date}}</td>
+                    <td>{{order.sum_price}} руб.</td>
                 </tr>
                 {%endfor%}
         </tbody>

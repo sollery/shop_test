@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+{%block title%}
+    Заказ
+{%endblock%}
+{%block content%}
+<h1>Информация о заказе</h1>
+    <table class="mytable">
+        <thead class="table-dark">
+            <tr>
+                <th>Номер заказа</th>
+                <th>Товар</th>
+                <th>Кол-во</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tbody>
+                    {% for order in orders %}
+                <tr>
+                    <td>{{order.order.id}}</td>
+                    <td>{{order.product}}</td>
+                    <td>{{order.count}} шт.</td>
+                </tr>
+                    {%endfor%}
+        </tbody>
+    </table>
+<a href="{% url 'products_list' %}" >Вернуться ко всем товарам</a>
+<a href="{% url 'Orders' %}" >Перейти ко всем заказам</a>
+{%endblock%}

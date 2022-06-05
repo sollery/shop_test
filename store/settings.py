@@ -119,10 +119,54 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')]
 
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
-
+EMAIL_SUBJECT_PREFIX = '[Zeh-shop]'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_PORT = 465
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST_USER = 'ilushamdmaa@Yandex.ru'
+EMAIL_HOST_PASSWORD = 'retry21iz'
+EMAIL_USE_SSL = True
+ADMINS = (
+    ('ilya_adm', 'ilushamdmaa@yandex.ru'),
+)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'main_format': {
+            'format': '{levelname} - {asctime} -  {module} -  {filename} - {message}',
+            'style': '{',
+        },
+
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'main_format'
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'formatter': 'main_format',
+            'filename': 'store/my.log',
+        },
+        'mail_admins': {
+            'class': 'django.utils.log.AdminEmailHandler',
+            'include_html': True,
+            'formatter': 'main_format',
+        },
+    },
+    'loggers': {
+        'main': {
+            'handlers': ['console', 'file', 'mail_admins'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}

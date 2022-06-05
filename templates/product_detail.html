@@ -5,22 +5,18 @@
     Добавление заказа
 {%endblock%}
 {%block content%}
-<h1>Добавление заказа</h1>
-    <form action="" method="post">
-        {% csrf_token %}
-        {% for product in products %}
-        <h1>{{product.title}}</h1>
-        <p>Кол-во на складе:{{product.count}}</p>
-        <p>Цена:{{product.price}}</p>
-        <div class = 'inp'>
-            <label>Введите кол-во:<input type="number" name="count" value ='0'></label>
-            <label>Введите ваше имя:<input type="text" name="name" placeholder="Ваше имя"></label>
+    <a href="{% url 'products_list' %}">Вернуться ко всем товарам</a>
+    <h1>{{product.title}}</h1>
+    <div class="product_main">
+        <div class="product_image">
+            <img src="{{product.img_product.url}}"width="300" height="400">
         </div>
-     {% endfor %}
-    <input type="submit" value="Заказать"/>
-    </form>
-    <h2>{{info}}</h2>
-    <a href="{% url 'Carts' %}" >Перейти к заказам</a>
-    <a href="{% url 'products_list' %}" >Вернуться ко всем товарам</a>
-    <script src="{%static 'test.js' %}"></script>
+        <div class ='product_dis'>
+            <h3>Кол-во на складе:</h3>{{product.count}}
+           <h3>Цена:</h3>{{product.price}}
+           <h3>Описание:</h3><p>{{product.description}}</p>
+           <h3>Производитель:</h3>{{product.made}}
+        </div>
+    </div>
+
 {%endblock%}
