@@ -1,12 +1,17 @@
+var but = document.querySelector('#button');
 
-function zakaz() {
+but.onclick = function save_result() {
     const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
         data = {
                 'count': '2',
                 'product_id' : '1',
                 'client_name' : 'Vasya',
+                'client_mail' : 'ilushamdmaa@yandex.ru',
+                'date'         : 'Какое то время',
+                'order_id'      : '194'
+
             };
-        fetch('/products/1/',   {
+        fetch('/products/',   {
                method: 'POST',
                body: JSON.stringify(data),
                headers: {
@@ -15,8 +20,5 @@ function zakaz() {
                         'Content-Type': 'application/json',
                     }})
                 .then(response => response.text())
-                .then(temp => {
-                    data["date"] = temp
-                })
                 .catch(error => console.log(error));
     }

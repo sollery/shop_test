@@ -25,6 +25,7 @@ def product_create(request):
         zakaz.save()
         temp = request.POST
         logger.info(temp)
+        # logger.error('dada')
         for k, v in temp.items():
             try:
                 id_pro = int(k)
@@ -43,7 +44,7 @@ def product_create(request):
                 product.save()
                 if s_price > 0:
                     info = f'Здравствуйте, {name}, вы заказали: {unpack(product_dict)} Сумма вашего заказа: {s_price}руб. , ' \
-                       f'номер вашего загаз: {zakaz.pk}'
+                       f'номер вашего заказа: {zakaz.pk}'
                 else:
                     info = f'Ошибка в заказе'
         zakaz_edit = Order.objects.get(id=zakaz.pk)

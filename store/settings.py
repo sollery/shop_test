@@ -14,6 +14,9 @@ from pathlib import Path
 from .data_secret import SECRET_KEY
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from .logging_formatters import CustomJsonFormatter
+from .pw_1 import my_pw
+from pythonjsonlogger.jsonlogger import JsonFormatter
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -130,7 +133,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_PORT = 465
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_HOST_USER = 'ilushamdmaa@Yandex.ru'
-EMAIL_HOST_PASSWORD = 'retry21iz'
+EMAIL_HOST_PASSWORD = my_pw
 EMAIL_USE_SSL = True
 ADMINS = (
     ('ilya_adm', 'ilushamdmaa@yandex.ru'),
@@ -144,6 +147,9 @@ LOGGING = {
             'format': '{levelname} - {asctime} -  {module} -  {filename} - {message}',
             'style': '{',
         },
+        'json-format': {
+            '()': JsonFormatter,
+        }
 
     },
     'handlers': {
@@ -153,13 +159,15 @@ LOGGING = {
         },
         'file': {
             'class': 'logging.FileHandler',
-            'formatter': 'main_format',
-            'filename': 'store/my.log',
+            'formatter': 'json-format',
+            'filename': 'store/my_json.log',
         },
         'mail_admins': {
             'class': 'django.utils.log.AdminEmailHandler',
             'include_html': True,
             'formatter': 'main_format',
+            'level': 'INFO',
+
         },
     },
     'loggers': {

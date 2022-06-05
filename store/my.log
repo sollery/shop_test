@@ -706,3 +706,15 @@ INFO - 2022-06-05 20:50:34,158 -  basehttp -  basehttp.py - "GET /products/ HTTP
 INFO - 2022-06-05 20:50:44,052 -  basehttp -  basehttp.py - - Broken pipe from ('127.0.0.1', 56195)
 
 INFO - 2022-06-05 20:52:58,553 -  views -  views.py - <QueryDict: {'name': ['Виктория'], 'email': ['itivih70@yandex.ru'], 'csrfmiddlewaretoken': ['VYZVNurDPGaWQcXSlp69lnRwHCUydFy06lbYjXvdxwqr5O0F7TUsj7gvs1EksrGr'], '3': ['2'], '2': ['2'], '1': ['5']}>
+INFO - 2022-06-05 21:08:15,991 -  views -  views.py - <QueryDict: {'name': ['Илья'], 'email': ['ilushamdmaa@yandex.ru'], 'csrfmiddlewaretoken': ['f4JGfqVmKEOHyluuBFmdgtap3OLDwAgnqrVJLTZWsu4cNXxhn9awedzoOdvpLmoO'], '3': ['1'], '2': ['2'], '1': ['1']}>
+INFO - 2022-06-05 21:27:46,936 -  views -  views.py - <QueryDict: {}>
+INFO - 2022-06-05 21:29:49,718 -  views -  views.py - <QueryDict: {}>
+INFO - 2022-06-05 21:29:58,442 -  views -  views.py - <QueryDict: {}>
+INFO - 2022-06-05 21:30:09,823 -  views -  views.py - <QueryDict: {}>
+INFO - 2022-06-05 21:30:18,653 -  views -  views.py - <QueryDict: {}>
+INFO - 2022-06-05 21:49:54,083 -  views -  views.py - <QueryDict: {'name': ['AFAFA'], 'email': ['FAFAFAFFAFAF'], 'csrfmiddlewaretoken': ['UjC7LEZz1ym3XiUpV3N0Ylbz3cq5LTJZ5GOah739JoCycUXcHxBjW5AyOBaR0FRq'], '3': ['2'], '2': ['2'], '1': ['1']}>
+INFO - 2022-06-05 21:49:57,026 -  views -  views.py - <QueryDict: {'name': ['AFAFA'], 'email': ['FAFAFAFFAFAF'], 'csrfmiddlewaretoken': ['UjC7LEZz1ym3XiUpV3N0Ylbz3cq5LTJZ5GOah739JoCycUXcHxBjW5AyOBaR0FRq'], '3': ['2'], '2': ['2'], '1': ['1']}>
+INFO - 2022-06-05 21:58:30,700 -  views -  views.py - <QueryDict: {'name': ['Илья'], 'email': ['ilushamdmaa@yandex.ru'], 'csrfmiddlewaretoken': ['viAoRXsIbGUExl6YWTW7WGMdkannA95TGFMrnqwiTwa9MX9LInKqUqbc5z79PVdk'], '3': ['2'], '2': ['0'], '1': ['0']}>
+ERROR - 2022-06-05 21:58:30,701 -  views -  views.py - dada
+{"message": null, "name": "\u0418\u043b\u044c\u044f", "email": "ilushamdmaa@yandex.ru", "csrfmiddlewaretoken": "5bLm8KFn6YYiOnhDxTlW9NwYkwOAAqs5gyXpEdJXOOeN3Zkqjn9f7xVX5VymPcAw", "3": "1", "2": "1", "1": "0"}
+{"message": "dada"}
