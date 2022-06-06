@@ -30,7 +30,7 @@
                     <td><a href="{% url 'products_detail' product.id %}">{{product.title}}</a></td>
                     {% if product.count > 0 %}
                         <td>Есть в наличии</td>
-                        <td><label>Введите кол-во:<input class = inp_c type="number" min=0 name="{{product.id}}" value ='0'></label></td>
+                        <td><label>Введите кол-во:<input class = inp_c type="number" min=0 max = {{product.count}} name="{{product.id}}" value ='0'></label></td>
                     {% else %}
                         <td>Закончились</td>
                         <td><label>Введите кол-во:<input class = inp_c type="number" name="{{product.id}}" value ='0' readonly></label></td>

@@ -7,8 +7,8 @@ but.onclick = function save_result() {
                 'product_id' : '1',
                 'client_name' : 'Vasya',
                 'client_mail' : 'ilushamdmaa@yandex.ru',
-                'date'         : 'Какое то время',
-                'order_id'      : '194'
+                'date'         : 'Дата и время',
+                'order_id'      : '100'
 
             };
         fetch('/products/',   {

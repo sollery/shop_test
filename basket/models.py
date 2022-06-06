@@ -33,7 +33,7 @@ class Order(models.Model):
         ordering = ['date']
         verbose_name = "Заказ"
         verbose_name_plural = "Заказы"
-        db_table = "order"
+        db_table = "order_"
 
 
 class Cart(models.Model):

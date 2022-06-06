@@ -17,9 +17,8 @@ import os
 from .logging_formatters import CustomJsonFormatter
 from .pw_1 import my_pw
 from pythonjsonlogger.jsonlogger import JsonFormatter
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
